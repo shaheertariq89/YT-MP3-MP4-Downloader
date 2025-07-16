@@ -9,8 +9,8 @@ Downloader = Flask(__name__)
 Downloader.config['MAIL_SERVER'] = 'smtp.gmail.com'
 Downloader.config['MAIL_PORT'] = 587
 Downloader.config['MAIL_USE_TLS'] = True
-Downloader.config['MAIL_USERNAME'] = 'hmzaa9358@gmail.com'  # Your Gmail email address
-Downloader.config['MAIL_PASSWORD'] = 'ustezbpaaxdsfzdq'  # Your Gmail password
+Downloader.config['MAIL_USERNAME'] = 'xyz@gmail.com'  # Your Gmail email address
+Downloader.config['MAIL_PASSWORD'] = '*********'  # Your Gmail password
 mail = Mail(Downloader)
 
 @Downloader.route('/')
@@ -209,7 +209,7 @@ def send_feedback_email(user_email, feedback_content):
     # Send feedback via email
     msg = Message(subject='videofetchFeedback',
                   sender=user_email,  # Your Gmail email address
-                  recipients=['hmzaa9358@gmail.com'])  # Your other email address where you want to forward the feedback
+                  recipients=['xyz@gmail.com'])  # Your other email address where you want to forward the feedback
     msg.body = f"User Email: {user_email}\nFeedback: {feedback_content}"
 
     # Initialize Flask-Mail and send the email
