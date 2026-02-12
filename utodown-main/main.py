@@ -53,9 +53,6 @@ def download_video():
                 video.download(default_download_folder)
                 # Rename the downloaded file to your desired filename
 
-
-
-
                 message = 'Video Downloaded Successfully!'
                 error_type = 1
                 matching_files = [file for file in os.listdir(default_download_folder) if file.startswith(video_filename)]
@@ -107,10 +104,6 @@ def progress_function(stream=None, chunk=None, bytes_remaining=None):
         print("progress is ", progress)
         # Return the progress value
         return progress
-
-
-
-
 
 @Downloader.route("/download1", methods=["GET", "POST"])
 def download_audio():
@@ -182,8 +175,6 @@ def about():
 @Downloader.route('/copyright')
 def copyright():
     return render_template('copyright.html')
-
-
 @Downloader.route('/feedback', methods=['GET', 'POST'])
 def feedback():
     if request.method == 'GET':
@@ -191,13 +182,10 @@ def feedback():
     if request.method == 'POST':
         user_email = request.form.get('userEmail')
         feedback_content = request.form.get('feedback')
-
         # Save the feedback in the backend
         save_feedback(user_email, feedback_content)
-
         # Send feedback to your email
         send_feedback_email(user_email, feedback_content)
-
         return jsonify({'message': 'Feedback submitted successfully!'})
 
 def save_feedback(user_email, feedback_content):
